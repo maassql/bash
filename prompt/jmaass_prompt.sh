@@ -176,14 +176,14 @@ ${bol_char}$( left_justify_padded "" ${longest} ${box_bottom_char} )${eol_char}"
     echo "${this_prompt_instance}"
 }
 
-preexec () { :; }
-preexec_invoke_exec () {
-    [ -n "$COMP_LINE" ] && return  # do nothing if completing
-    [ "$BASH_COMMAND" = "$PROMPT_COMMAND" ] && return # don't cause a preexec for $PROMPT_COMMAND
-    local this_command=`HISTTIMEFORMAT= history 1 | sed -e "s/^[ ]*[0-9]*[ ]*//"`;
-    preexec "$this_command"
-}
-trap 'preexec_invoke_exec' DEBUG
+# preexec () { :; }
+# preexec_invoke_exec () {
+#     [ -n "$COMP_LINE" ] && return  # do nothing if completing
+#     [ "$BASH_COMMAND" = "$PROMPT_COMMAND" ] && return # don't cause a preexec for $PROMPT_COMMAND
+#     local this_command=`HISTTIMEFORMAT= history 1 | sed -e "s/^[ ]*[0-9]*[ ]*//"`;
+#     preexec "$this_command"
+# }
+# trap 'preexec_invoke_exec' DEBUG
 
 #
 # get_prompt_text(){
@@ -199,6 +199,7 @@ trap 'preexec_invoke_exec' DEBUG
 
 set_prompt(){
 
+    echo "Setting Prompt from file=[${BASH_SOURCE[0]}]"
 
     local cont_seq_init="\033["
     local cont_seq_term="0m"
@@ -207,6 +208,7 @@ set_prompt(){
 
     export PS1="${bold_black_on_orange}\`get_prompt_text\`${color_reset}"
 
+    echo "DONE Setting Prompt from file=[${BASH_SOURCE[0]}]"
 }
 
 set_prompt
