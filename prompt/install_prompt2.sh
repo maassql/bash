@@ -11,7 +11,7 @@ function set_prompt_directory(){
 function get_from_repository(){
 	local to="${HOME_OF_PROMPT_SCRIPTS}/${1}"
 	
-	if [ -f ${to} ] then;
+	if [ -f "${to}" ] then;
 		rm "${to}"
 	fi
 
