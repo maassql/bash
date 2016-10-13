@@ -13,14 +13,8 @@ function get_from_repository(){
 	source "${HOME_OF_PROMPT_SCRIPTS}/${1}"
 }
 
-
 HOME_OF_PROMPT_SCRIPTS=set_prompt_directory
 
-get_from_repository "func_get_color_combinations.sh"
-get_from_repository "func_get_datetime_iso_8601.sh"
-get_from_repository "func_get_prompt_text.sh"
-get_from_repository "func_left_justify_padded.sh"
-get_from_repository "func_parse_git_dirty.sh"
-get_from_repository "func_set_prompt.sh"
+get_from_repository 'jmaass_prompt.sh'
 
-set_prompt
+bash "${HOME_OF_PROMPT_SCRIPTS}/${1}"
