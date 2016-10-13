@@ -35,5 +35,3 @@ WGET_OPTS="--tries=2 --no-verbose --show-progress --dns-timeout=2 --read-timeout
 
 
 get_from_repository 'jmaass_prompt.sh'
-
-source "${HOME_OF_PROMPT_SCRIPTS}/jmaass_prompt.sh"

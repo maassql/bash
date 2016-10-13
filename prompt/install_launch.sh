@@ -11,3 +11,4 @@ fi
 wget "https://raw.githubusercontent.com/maassql/bash/master/prompt/install_prompt2.sh"
 bash "install_prompt2.sh"
 rm "install_prompt2.sh"
+source "${HOME_OF_PROMPT_SCRIPTS}/jmaass_prompt.sh"
