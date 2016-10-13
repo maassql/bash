@@ -9,7 +9,7 @@ function set_prompt_directory(){
 }
 
 function get_from_repository(){
-	wget "https://github.com/maassql/bash/blob/master/prompt/${1}"
+	wget "https://raw.githubusercontent.com/maassql/bash/master/prompt/${1}"
 	source "${HOME_OF_PROMPT_SCRIPTS}/${1}"
 }
 
