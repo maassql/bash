@@ -9,11 +9,21 @@ function set_prompt_directory(){
 }
 
 function get_from_repository(){
-	wget "https://raw.githubusercontent.com/maassql/bash/master/prompt/${1}"
-	source "${HOME_OF_PROMPT_SCRIPTS}/${1}"
+	local to="${HOME_OF_PROMPT_SCRIPTS}/${1}"
+	
+	if [ -f ${to} ] then;
+		rm "${to}"
+	fi
+
+	wget ${WGET_OPTS} "${1}"
+	
+	source "${to}"
 }
 
+WGET_OPTS="--output-file=\"${WGET_LOG}\" --tries=2 --no-verbose --base=\"${REPO}\" --show-progress --dns-timeout=2 --read-timeout=2 --connect-timeout=4 --prefer-family=IPv4 --no-dns-cache --retry-connrefused "
+REPO="https://raw.githubusercontent.com/maassql/bash/master/prompt/"
 HOME_OF_PROMPT_SCRIPTS=set_prompt_directory
+WGET_LOG="${HOME_OF_PROMPT_SCRIPTS}/wget-log.log"
 
 get_from_repository 'jmaass_prompt.sh'
 
