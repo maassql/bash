@@ -24,7 +24,7 @@ function get_from_repository(){
 
 HOME_OF_PROMPT_SCRIPTS=$(set_prompt_directory)
 WGET_LOG="${HOME_OF_PROMPT_SCRIPTS}/wget-log.log"
-WGET_OPTS="--quiet --tries=2 --no-verbose --show-progress --dns-timeout=2 --read-timeout=2 --connect-timeout=4 --prefer-family=IPv4 --no-dns-cache --retry-connrefused "
+WGET_OPTS="--quiet --tries=2 --no-verbose --dns-timeout=2 --read-timeout=2 --connect-timeout=4 --prefer-family=IPv4 --no-dns-cache --retry-connrefused "
 
 
 get_from_repository 'jmaass_prompt.sh'
