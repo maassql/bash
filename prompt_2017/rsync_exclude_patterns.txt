@@ -1,0 +1,4 @@
+.gitignore
+home_to_repository.sh
+rsync_exclude_patterns.txt
+repo_to_home.sh
