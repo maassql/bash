@@ -1,3 +1,10 @@
+# source prompt 
+# source $HOME/jmaass_prompt.sh
+#
+# save changes to prompt
+# save_prompt_changes
+
+
 source "${HOME}/.prompt_includes/command_timer.sh"
 source "${HOME}/.prompt_includes/load_stuff.sh"
 source "${HOME}/.prompt_includes/aws_stuff.sh"
@@ -19,7 +26,9 @@ get_command_entered(){
     echo "you typed=${cmd}"
 }
 
-
+save_prompt_changes(){
+    bash "$HOME/Documents/repos/bash/prompt_2017/home_to_repository.sh"
+}
 
 
 
