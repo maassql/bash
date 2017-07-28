@@ -2,6 +2,6 @@
 
 ```bash
 cd $HOME
-wget https://raw.githubusercontent.com/maassql/bash/master/deploy.sh
+wget --output-document=$HOME/deploy.sh https://raw.githubusercontent.com/maassql/bash/master/deploy.sh
 bash $HOME/deploy.sh
 ```
