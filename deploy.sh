@@ -12,8 +12,8 @@ if [ -d "${repo_dir}" ];
         git clone https://github.com/maassql/bash
 fi
 
-echo "Deploying scripts from repository."
 bash "${repo_dir}"/prompt_2017/repo_to_home.sh
 
-echo "Sourcing prompt scripts."
+echo "BEGIN - Sourcing prompt scripts."
 source $HOME/jmaass_prompt.sh
+echo "DONE - Sourcing prompt scripts."
