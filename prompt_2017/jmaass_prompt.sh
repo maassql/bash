@@ -4,9 +4,12 @@
 # save changes to prompt
 # save_prompt_changes
 
-
-save_prompt_changes(){
+# run this function at any prompt.  
+# Changes to this file will be saved to the local repository
+# you will still have to manually push the changes to the remote
+commit_prompt_changes_to_local_repository(){
     bash "$HOME/Documents/repos/bash/prompt_2017/home_to_repository.sh"
+    echo "You still gotta push these changes to the remote"
 }
 
 source "${HOME}/.prompt_includes/command_timer.sh"
@@ -72,7 +75,7 @@ get_prompt_text(){
                 local git_prompt_line="
 ${RESET_PROMPT}$( make_line_data "${C1}${git_branch}${C2}${git_status}" ${COLUMNS} )"
             else
-                local git_prompt_line='<not git repo>'
+                local git_prompt_line="${C1} <not git repo>"
             fi
         else
             local git_prompt_line=''
@@ -95,7 +98,7 @@ ${RESET_PROMPT}$( make_line_data "${C1}${git_branch}${C2}${git_status}" ${COLUMN
 ${last_command_result} ran in ${save_timer} ${RESET_PROMPT}$(tput setab 239)
 ${RESET_PROMPT}$( make_line_top                                                                                                             ${COLUMNS} )
 ${RESET_PROMPT}$( make_line_data "${C1}${dttm} ${C2}${_user}${CB}@${C1}$(hostname)${CB}:${C2}${command_prompt_pid}${CB}:${C1}${os_name}"    ${COLUMNS} )${aws_prompt_line}
-${RESET_PROMPT}$( make_line_data "${C2}${full_path}"                                                                                        ${COLUMNS} )${git_prompt_line}
+${RESET_PROMPT}$( make_line_data "${C2}'${full_path}'"                                                                                        ${COLUMNS} )${git_prompt_line}
 ${C_POINTER}$ --->${RESET_TERMINAL}
 "
 
