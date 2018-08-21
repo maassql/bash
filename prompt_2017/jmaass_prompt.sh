@@ -4,6 +4,14 @@
 # save changes to prompt
 # save_prompt_changes
 
+
+# install prompt:
+# bash
+# cd $HOME
+# wget --output-document=$HOME/deploy.sh https://raw.githubusercontent.com/maassql/bash/master/deploy.sh
+# bash $HOME/deploy.sh
+
+
 # run this function at any prompt.  
 # Changes to this file will be saved to the local repository
 # you will still have to manually push the changes to the remote
