@@ -87,8 +87,9 @@ is_aws(){
 
 
 get_aws_prompt_line(){
-    if [ $(is_aws) -eq 1 ];
+    if [ "${THIS_IS_AWS}" == "1" ]; 
         then
+
             local C_AWS_1="$(tput setaf 172)"
             local C_AWS_2="$(tput setaf 202)"
             if [ "$(get_aws_public_ipv4)" != "" ];
@@ -98,6 +99,11 @@ get_aws_prompt_line(){
 
             local aws_prompt_line="
 $( make_line_data "${C_AWS_1}$(get_aws_billing_account)${CB}:${C_AWS_2}$(get_aws_availability_zone)${CB}:${C_AWS_1}$(get_aws_vpc_id)${CB}:${C_AWS_2}$(get_aws_subnet_id)" ${COLUMNS} )${aws_pub}"
+
     fi
+
     echo "${aws_prompt_line}"
 }
+
+
+THIS_IS_AWS="$(is_aws)"

@@ -39,3 +39,5 @@ turn_on_color_ls(){
         alias ls="ls --color=always"
     fi
 }
+
+PROMPT_SWITCH_ENV_SWITCHES_STUFF_SOURCED=1
