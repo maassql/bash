@@ -27,6 +27,6 @@ bash "${repo_dir}"/prompt_2017/repo_to_home.sh
 # ----- show the user their prompt has changed -------------------------
 echo "BEGIN - Sourcing prompt scripts."
 source $HOME/jmaass_prompt.sh
-echo "DONE - Sourcing prompt scripts."
+echo "DONE YOU SEXY SEXY MAN - Sourcing prompt scripts."
 # ----- show the user their prompt has changed -------------------------
 # ----------------------------------------------------------------------
