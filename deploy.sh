@@ -4,7 +4,7 @@
 repo_dir="$HOME/bash"
 if [ -d "${repo_dir}" ];
     then
-        echo "Pulling from remote git repository to local directory, [${repo_dir}]."
+        echo "Pulling from remote git repository to local directory you sexy man, [${repo_dir}]."
         cd "${repo_dir}"
         git pull
     else
